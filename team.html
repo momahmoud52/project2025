@@ -68,6 +68,8 @@
             background: rgba(255, 255, 255, 0.8);
             border: 2px solid #ff6347;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeInImage 0.5s forwards;
         }
 
         /* تأثير التلاشي للصور */
@@ -125,8 +127,6 @@
             animation-delay: 3.9s;
         }
 
-    
-
         .team-member img {
             width: 100px;
             height: 100px;
@@ -134,22 +134,22 @@
             border: 2px solid #ff6347;
             margin: 10px 0;
             transition: transform 0.3s ease-in-out;
-    }
+        }
 
-    .team-member img:hover {
-        transform: scale(1.1);
-    }
+        .team-member img:hover {
+            transform: scale(1.1);
+        }
 
-    .team-member p {
-        font-size: 0.9em;
-        color: #faf8f8;
-        font-weight: 600;
-        margin-top: 10px;
-        padding: 5px 15px;
-        background-color: #ff6347;
-        border-radius: 5px;
-        display: inline-block;
-        animation: fadeInText 0.3s forwards; 
+        .team-member p {
+            font-size: 0.9em;
+            color: #faf8f8;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: #ff6347;
+            border-radius: 5px;
+            display: inline-block;
+            animation: fadeInText 0.3s forwards;
         }
 
         /* تأثير التلاشي للنصوص */
@@ -161,7 +161,6 @@
                 opacity: 1;
             }
         }
-
 
         /* مشرف الفريق */
         .supervisor-container {
@@ -213,7 +212,6 @@
             font-weight: 700;
         }
 
-        
         /* إعدادات للزر */
         .continue-button {
             margin-top: 20px;
@@ -255,7 +253,7 @@
             outline: none;
             box-shadow: 0 0 10px #ff6347, 0 0 40px #ff6347, 0 0 80px #ff6347;
         }
-        
+
         /* تصميم استجابة */
         @media (max-width: 768px) {
             h1 {
@@ -292,7 +290,6 @@
             }
         }
     </style>
-
 </head>
 <body>
 
