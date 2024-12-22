@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الكسب السريع من الإنترنت</title>
-    <!-- إضافة خط Reem Kufi للعناوين الرئيسية -->
+    <!-- إضافة خطوط Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
-    <!-- إضافة خط Tajawal للعناوين الفرعية -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <!-- إضافة خط Cairo لحقوق الطبع والنشر -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* إعدادات الجسم والصفحة */
         body, html {
             height: 100%;
             margin: 0;
-            font-family: 'Reem Kufi', sans-serif; /* تغيير الخط إلى Reem Kufi للعناوين */
+            font-family: 'Reem Kufi', sans-serif;
             direction: rtl;
-            overflow: hidden; /* منع التمرير إذا كانت الخلفية كبيرة */
+            overflow: hidden;
         }
 
         /* الخلفية المتحركة مع الفيديوهات */
@@ -31,7 +29,6 @@
             overflow: hidden;
         }
 
-        /* تحديد الشفافية للفيديوهات من هنا */
         .background-video {
             position: absolute;
             top: 0;
@@ -40,34 +37,34 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            opacity: 0; /* جعل الفيديوهات غير مرئية في البداية */
-            transition: opacity 1s ease-in-out; /* إضافة تأثير التلاشي بين الفيديوهات */
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
         /* تنسيق العنوان الرئيسي */
         .main-title {
             position: absolute;
-            top: 30%;
+            top: 20%;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 4.5em;
+            font-size: calc(2rem + 3vw);
             color: rgb(151, 0, 0);
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            animation: fadeIn 2s ease-in-out;
-            font-family: 'Reem Kufi', sans-serif; /* استخدام خط Reem Kufi للعناوين الرئيسية */
+            font-family: 'Reem Kufi', sans-serif;
+            text-align: center;
         }
 
         /* تنسيق العنوان الفرعي */
         .sub-title {
             position: absolute;
-            top: 45%;
+            top: 35%;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 2.5em;
+            font-size: calc(1.5rem + 1.5vw);
             color: white;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            animation: fadeIn 2s ease-in-out;
-            font-family: 'Tajawal', sans-serif; /* استخدام خط Tajawal للعناوين الفرعية */
+            font-family: 'Tajawal', sans-serif;
+            text-align: center;
         }
 
         /* حقوق الطبع والنشر */
@@ -76,41 +73,76 @@
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 1.2em;
+            font-size: calc(0.8rem + 0.5vw);
             color: white;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            animation: fadeIn 2s ease-in-out;
-            font-family: 'Cairo', sans-serif; /* استخدام خط Cairo لحقوق الطبع والنشر */
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
         }
 
-        /* إضافة الزر */
+        /* الزر */
         .team-button {
             position: absolute;
-            top: 60%;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(-50%);
             padding: 10px 20px;
-            font-size: 1.5em;
+            font-size: calc(1rem + 0.5vw);
             background-color: rgb(151, 0, 0);
             color: white;
             border: none;
             border-radius: 15px;
             cursor: pointer;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            animation: fadeIn 2s ease-in-out;
+            text-align: center;
         }
 
         .team-button:hover {
             background-color: rgb(200, 0, 0);
         }
 
-        /* تأثير تلاشي للنصوص */
+        /* تأثير تلاشي النصوص */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
             }
             100% {
                 opacity: 1;
+            }
+        }
+
+        /* إعدادات استجابة الصفحة */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: calc(1.5rem + 3vw);
+            }
+
+            .sub-title {
+                font-size: calc(1.2rem + 2vw);
+            }
+
+            .team-button {
+                font-size: calc(1rem + 0.8vw);
+                padding: 10px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: calc(1rem + 4vw);
+            }
+
+            .sub-title {
+                font-size: calc(1rem + 2.5vw);
+            }
+
+            .team-button {
+                font-size: calc(0.9rem + 0.5vw);
+                padding: 8px 12px;
+            }
+
+            .footer {
+                font-size: calc(0.7rem + 0.5vw);
             }
         }
 
@@ -149,31 +181,21 @@
         جميع الحقوق محفوظة للفرقة الرابعة بقسم علم الاجتماع
     </div>
 
-    <!-- الزر لانتقال إلى صفحة فريق العمل -->
+    <!-- الزر -->
     <button class="team-button" onclick="window.location.href='team.html';">الإنتقال إلى فريق العمل</button>
 
     <script>
-        // التبديل بين الفيديوهات
         const videos = document.querySelectorAll('.background-video');
         let currentVideo = 0;
 
         function switchVideo() {
-            // إخفاء الفيديو الحالي
-            videos[currentVideo].style.opacity = 1;
-
-            // الانتقال إلى الفيديو التالي
+            videos[currentVideo].style.opacity = 0;
             currentVideo = (currentVideo + 1) % videos.length;
-
-            // إظهار الفيديو الجديد
             videos[currentVideo].style.opacity = 1;
         }
 
-        // التبديل بين الفيديوهات كل 15 ثانية مع إضافة تأثير التلاشي
         setInterval(switchVideo, 5000);
-
-        // جعل الفيديو الأول مرئياً عند البداية مع تأثير تلاشي
         videos[0].style.opacity = 1;
     </script>
-
 </body>
 </html>

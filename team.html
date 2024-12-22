@@ -31,10 +31,10 @@
         h1 {
             font-family: 'Tajawal', sans-serif;
             color: #800000;
-            font-size: 4em;
+            font-size: 2.5em;
             letter-spacing: 3px;
             text-transform: uppercase;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* تأثير الظل على النص */
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
             animation: textSlideIn 3s ease-out forwards;
         }
 
@@ -54,21 +54,20 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 3px;
-            padding: 30px 10px;
+            gap: 10px;
+            padding: 20px;
         }
 
         .team-member {
             text-align: center;
-            width: 220px;
-            margin: 15px;
+            width: calc(50% - 20px); /* العرض الافتراضي */
+            max-width: 200px;
+            margin: 10px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.8); /* تقليل الشفافية */
+            background: rgba(255, 255, 255, 0.8);
             border: 2px solid #ff6347;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            animation: fadeInImage 0.5s forwards;
         }
 
         /* تأثير التلاشي للصور */
@@ -126,30 +125,31 @@
             animation-delay: 3.9s;
         }
 
+    
+
         .team-member img {
-            width: 120px;
-            height: 120px;
-            border-radius: 20%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             border: 2px solid #ff6347;
             margin: 10px 0;
             transition: transform 0.3s ease-in-out;
-        }
+    }
 
-        .team-member img:hover {
-            transform: scale(1.1); /* تكبير الصورة عند التمرير */
-        }
+    .team-member img:hover {
+        transform: scale(1.1);
+    }
 
-        .team-member p {
-            font-size: 1.0em;
-            color: #faf8f8;
-            font-weight: 600;
-            margin-top: 10px;
-            padding: 5px 15px;
-            background-color: #ff6347; /* خلفية جذابة */
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-            animation: fadeInText 0.3s forwards;
+    .team-member p {
+        font-size: 0.9em;
+        color: #faf8f8;
+        font-weight: 600;
+        margin-top: 10px;
+        padding: 5px 15px;
+        background-color: #ff6347;
+        border-radius: 5px;
+        display: inline-block;
+        animation: fadeInText 0.3s forwards; 
         }
 
         /* تأثير التلاشي للنصوص */
@@ -162,41 +162,42 @@
             }
         }
 
+
         /* مشرف الفريق */
-        .supervisor {
-            width: 220px;
-            margin: 30px;
-            text-align: center;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            border: 0.3px solid #ff6347;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        .supervisor-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
             opacity: 0;
             animation: fadeInImage 0.5s forwards;
         }
-            .supervisor-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px; /* مسافة بين الصور */
-                margin-bottom: 30px;
-            }
-        
+
+        .supervisor {
+            width: calc(50% - 20px); /* العرض الافتراضي */
+            max-width: 250px;
+            text-align: center;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #ff6347;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
         .supervisor img {
-            width: 160px;
-            height: 160px;
+            width: 120px;
+            height: 120px;
             border-radius: 10%;
             border: 5px solid #ff6347;
-            margin: 15px 0;
+            margin: 10px 0;
             transition: transform 0.3s ease-in-out;
         }
 
         .supervisor img:hover {
             transform: scale(1.1);
         }
-
         .supervisor p {
-            font-size: 0.8em;
+            font-size: 1em;
             font-weight: 600;
             color: #070707;
             background-color: #ff6347;
@@ -206,8 +207,8 @@
         }
 
         footer {
-            margin-top: 40px;
-            font-size: 1.5em;
+            margin-top: 20px;
+            font-size: 1em;
             color: #090909;
             font-weight: 700;
         }
@@ -216,8 +217,8 @@
         /* إعدادات للزر */
         .continue-button {
             margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 1.5em;
+            padding: 10px 20px;
+            font-size: 1.2em;
             font-weight: bold;
             color: #ffffff;
             background-color: #ff6347;
@@ -254,7 +255,44 @@
             outline: none;
             box-shadow: 0 0 10px #ff6347, 0 0 40px #ff6347, 0 0 80px #ff6347;
         }
+        
+        /* تصميم استجابة */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .team-member {
+                width: calc(100% - 20px);
+            }
+
+            .supervisor {
+                width: calc(100% - 20px);
+            }
+
+            .continue-button {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .team-member img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .supervisor img {
+                width: 100px;
+                height: 100px;
+            }
+        }
     </style>
+
 </head>
 <body>
 
