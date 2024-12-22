@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فريق العمل</title>
+    <!-- إضافة خط "Tajawal" -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        /* إعدادات عامة للصفحة */
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* إضافة الفيديو كخلفية */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* ضمان أن الفيديو في الخلفية */
+            object-fit: cover;
+            opacity: 0.5; /* تقليل الشفافية */
+        }
+
+        h1 {
+            font-family: 'Tajawal', sans-serif;
+            color: #800000;
+            font-size: 4em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* تأثير الظل على النص */
+            animation: textSlideIn 3s ease-out forwards;
+        }
+
+        @keyframes textSlideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* تنسيق الأعضاء */
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3px;
+            padding: 30px 10px;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 220px;
+            margin: 15px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8); /* تقليل الشفافية */
+            border: 2px solid #ff6347;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeInImage 0.5s forwards;
+        }
+
+        /* تأثير التلاشي للصور */
+        @keyframes fadeInImage {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-member:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .team-member:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        .team-member:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        .team-member:nth-child(4) {
+            animation-delay: 0.9s;
+        }
+        .team-member:nth-child(5) {
+            animation-delay: 1.2s;
+        }
+        .team-member:nth-child(6) {
+            animation-delay: 1.5s;
+        }
+        .team-member:nth-child(7) {
+            animation-delay: 1.8s;
+        }
+        .team-member:nth-child(8) {
+            animation-delay: 2.1s;
+        }
+        .team-member:nth-child(9) {
+            animation-delay: 2.4s;
+        }
+        .team-member:nth-child(10) {
+            animation-delay: 2.7s;
+        }
+        .team-member:nth-child(11) {
+            animation-delay: 3s;
+        }
+        .team-member:nth-child(12) {
+            animation-delay: 3.3s;
+        }
+        .team-member:nth-child(13) {
+            animation-delay: 3.6s;
+        }
+        .team-member:nth-child(14) {
+            animation-delay: 3.9s;
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 20%;
+            border: 2px solid #ff6347;
+            margin: 10px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.1); /* تكبير الصورة عند التمرير */
+        }
+
+        .team-member p {
+            font-size: 1.0em;
+            color: #faf8f8;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: #ff6347; /* خلفية جذابة */
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            animation: fadeInText 0.3s forwards;
+        }
+
+        /* تأثير التلاشي للنصوص */
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* مشرف الفريق */
+        .supervisor {
+            width: 220px;
+            margin: 30px;
+            text-align: center;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 0.3px solid #ff6347;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInImage 0.5s forwards;
+        }
+            .supervisor-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px; /* مسافة بين الصور */
+                margin-bottom: 30px;
+            }
+        
+        .supervisor img {
+            width: 160px;
+            height: 160px;
+            border-radius: 10%;
+            border: 5px solid #ff6347;
+            margin: 15px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .supervisor img:hover {
+            transform: scale(1.1);
+        }
+
+        .supervisor p {
+            font-size: 0.8em;
+            font-weight: 600;
+            color: #070707;
+            background-color: #ff6347;
+            padding: 5px 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #090909;
+            font-weight: 700;
+        }
+
+        
+        /* إعدادات للزر */
+        .continue-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #ff6347;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            animation: fadeInButton 1s ease-out forwards;
+            animation-delay: 3s; /* تأخير ظهور الزر */
+            opacity: 0; /* يبدأ مخفيًا */
+        }
+
+        .continue-button:hover {
+            background-color: #e5533c;
+            transform: scale(1.1) rotate(3deg); /* تكبير مع دوران طفيف */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* زيادة الظل */
+        }
+
+        /* تأثير النبض */
+        @keyframes fadeInButton {
+            0% {
+                opacity: 0;
+                transform: translateY(20px); /* الزر يبدأ أسفل الموقع */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* الزر يعود لموقعه الطبيعي */
+            }
+        }
+
+        /* إضافة تأثير عندما يكون الزر في حالة التركيز (focus) */
+        .continue-button:focus {
+            outline: none;
+            box-shadow: 0 0 10px #ff6347, 0 0 40px #ff6347, 0 0 80px #ff6347;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- إضافة فيديو كخلفية -->
+    <video class="video-background" autoplay loop muted>
+        <source src="560768591114604529.mp4" type="video/mp4">
+        <source src="560768591114604529.mp4" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- قسم الخلفية المخصصة -->
+    <div class="custom-background">
+        <h1>مشرف المشروع و فريق العمل</h1>
+        <div class="supervisor-container">
+            <!-- مشرف الفريق -->
+            <div class="supervisor">
+                <img src="Screenshot 2024-12-22 174706.png" alt="الدكتور أحمد يوسف">
+                <p><strong>المشرف:</strong> ا.د / سحر حساني بربري</p>
+            </div>
+        
+            <!-- مساعد المشرف -->
+            <div class="supervisor">
+                <img src="429753931_7342413765828385_4675140865618710912_n.jpg" alt="مساعد المشرف">
+                <p><strong>مساعد المشرف:</strong>د/ دينا محمد</p>
+            </div>
+        </div>
+
+         <!-- زر الاستمرار -->
+         <button class="continue-button" onclick="window.location.href='project.html';">الاستمرار</button>
+
+        <!-- أعضاء الفريق -->
+        <div class="team-container">
+            <div class="team-member">
+                <img src="IMG_20241221_223105.jpg" alt="عضو 1">
+                <p>محمد محمود الشحات</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-18 at 10.47.19_7ac01b05.jpg" alt="عضو 2">
+                <p>محمود شريف عبد الحميد</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 17.35.07_951ba1b3.jpg" alt="عضو 3">
+                <p>مريم محمد أحمد </p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 18.02.40_d6c67f26.jpg" alt="عضو 4">
+                <p>سما عادل مصطفي</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 18.03.07_c2955d6e.jpg" alt="عضو 5">
+                <p>شروق عامر تركي</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 18.06.44_447225a8.jpg" alt="عضو 6">
+                <p>فاطمة مرسي إبراهيم</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 18.21.12_14aa3c6c.jpg" alt="عضو 7">
+                <p>مريم صادق مسعود</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 18.21.12_14aa3c6c.jpg" alt="عضو 8">
+                <p>آيه محمـد طلـب</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 18.22.53_6a5afada.jpg" alt="عضو 9">
+                <p>شاهندة وائل ثابت</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 19.09.18_85d1a0ed.jpg" alt="عضو 10">
+                <p>فاطمة هاني فتحــي</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 19.56.25_8e90d71a.jpg" alt="عضو 11">
+                <p>علا خالد عبدالهادي</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-17 at 21.03.44_0eac2ed6.jpg" alt="عضو 12">
+                <p>مارلين صموئيل سمير</p>
+            </div>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-12-18 at 01.01.58_a1660e01.jpg" alt="عضو 13">
+                <p>مريم سيــد فـاروق</p>
+            </div>
+            <div class="team-member">
+                <img src="52-525979_unknown-person-png-transparent-png.png" alt="عضو 14">
+                <p>شهد محمد إبراهيم</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 فريق العمل</p>
+        </footer>
+    </div>
+
+</body>
+</html>

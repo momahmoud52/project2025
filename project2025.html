@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكسب السريع من الإنترنت</title>
+    <!-- إضافة خط Reem Kufi للعناوين الرئيسية -->
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+    <!-- إضافة خط Tajawal للعناوين الفرعية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <!-- إضافة خط Cairo لحقوق الطبع والنشر -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* إعدادات الجسم والصفحة */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Reem Kufi', sans-serif; /* تغيير الخط إلى Reem Kufi للعناوين */
+            direction: rtl;
+            overflow: hidden; /* منع التمرير إذا كانت الخلفية كبيرة */
+        }
+
+        /* الخلفية المتحركة مع الفيديوهات */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* تحديد الشفافية للفيديوهات من هنا */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0; /* جعل الفيديوهات غير مرئية في البداية */
+            transition: opacity 1s ease-in-out; /* إضافة تأثير التلاشي بين الفيديوهات */
+        }
+
+        /* تنسيق العنوان الرئيسي */
+        .main-title {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4.5em;
+            color: rgb(151, 0, 0);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+            font-family: 'Reem Kufi', sans-serif; /* استخدام خط Reem Kufi للعناوين الرئيسية */
+        }
+
+        /* تنسيق العنوان الفرعي */
+        .sub-title {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+            font-family: 'Tajawal', sans-serif; /* استخدام خط Tajawal للعناوين الفرعية */
+        }
+
+        /* حقوق الطبع والنشر */
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2em;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+            font-family: 'Cairo', sans-serif; /* استخدام خط Cairo لحقوق الطبع والنشر */
+        }
+
+        /* إضافة الزر */
+        .team-button {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 1.5em;
+            background-color: rgb(151, 0, 0);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .team-button:hover {
+            background-color: rgb(200, 0, 0);
+        }
+
+        /* تأثير تلاشي للنصوص */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- الخلفية المتحركة مع الفيديوهات -->
+    <div class="background">
+        <video class="background-video" id="video1" autoplay muted loop>
+            <source src="1008595279035763359.mp4" type="video/mp4">
+            <source src="1008595279035763359.mp4" type="video/ogg">
+            المتصفح الخاص بك لا يدعم الفيديو.
+        </video>
+        <video class="background-video" id="video2" autoplay muted loop>
+            <source src="225109681362029908.mp4" type="video/mp4">
+            <source src="225109681362029908.mp4" type="video/ogg">
+            المتصفح الخاص بك لا يدعم الفيديو.
+        </video>
+        <video class="background-video" id="video3" autoplay muted loop>
+            <source src="500673683591553567.mp4" type="video/mp4">
+            <source src="500673683591553567.mp4" type="video/ogg">
+            المتصفح الخاص بك لا يدعم الفيديو.
+        </video>
+    </div>
+
+    <div class="main-title">
+        الكسب السريع من الإنترنت
+    </div>
+
+    <div class="sub-title">
+        مشروع تخرج الفرقة الرابعة 2025
+    </div>
+
+    <div class="footer">
+        جميع الحقوق محفوظة للفرقة الرابعة بقسم علم الاجتماع
+    </div>
+
+    <!-- الزر لانتقال إلى صفحة فريق العمل -->
+    <button class="team-button" onclick="window.location.href='team.html';">الإنتقال إلى فريق العمل</button>
+
+    <script>
+        // التبديل بين الفيديوهات
+        const videos = document.querySelectorAll('.background-video');
+        let currentVideo = 0;
+
+        function switchVideo() {
+            // إخفاء الفيديو الحالي
+            videos[currentVideo].style.opacity = 1;
+
+            // الانتقال إلى الفيديو التالي
+            currentVideo = (currentVideo + 1) % videos.length;
+
+            // إظهار الفيديو الجديد
+            videos[currentVideo].style.opacity = 1;
+        }
+
+        // التبديل بين الفيديوهات كل 15 ثانية مع إضافة تأثير التلاشي
+        setInterval(switchVideo, 5000);
+
+        // جعل الفيديو الأول مرئياً عند البداية مع تأثير تلاشي
+        videos[0].style.opacity = 1;
+    </script>
+
+</body>
+</html>
